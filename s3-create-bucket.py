@@ -11,6 +11,10 @@ args = parser.parse_args()
 
 def create_bucket(bucket_name, region):
     try:
+      if region == 'us-east-1':
+        s3_client = boto3.client('s3')
+        s3_client.create_bucket(Bucket=bucket_name)
+      else:
         s3_client = boto3.client('s3')
         location = {'LocationConstraint': region}
         s3_client.create_bucket(Bucket=bucket_name, CreateBucketConfiguration=location)
