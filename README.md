@@ -6,16 +6,16 @@ I can create s3 buckets and accept args like bucketname(name of the bucket), reg
 
 ## How to use me 
 
-##You can build me into a docker image with the command below 
+You can build me into a docker image with the command below 
 ```sh
 docker build -t s3-create-bucket .
 ```
-##To run me use the command below, by default I lock down s3, if you dont specify the --public args.
+To run me use the command below, by default I lock down s3, if you dont specify the --public args.
 ```sh
 docker run --rm -ti -v ~/.aws:/root/.aws s3-create-bucket name-of-the-s3-bucket aws-region 
 ```
 
-##Add the --public argument if you need to have your s3 bucket with open permissions (Bad), but i like to give options.
+Add the --public argument if you need to have your s3 bucket with open permissions (Bad), but i like to give options.
 ```sh
 docker run --rm -ti -v ~/.aws:/root/.aws s3-create-bucket name-of-the-s3-bucket aws-region --public
 ```
